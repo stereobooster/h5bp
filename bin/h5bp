@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'h5bp'
+
+begin
+  H5bp::CLI.start
+rescue StandardError => e
+  p e.message
+  p e.backtrace.join("\n")
+  exit 1
+rescue Interrupt => e
+  p "\nQuitting..."
+  p e.backtrace.join("\n")
+  exit 1
+end
